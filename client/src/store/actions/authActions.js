@@ -106,3 +106,4 @@ export const logOut = apiKey => {
  * # clear state messages
  */
 export const clearMessagesAction = () => dispatch => dispatch({ type: CLEAR_MESSAGES });
+
