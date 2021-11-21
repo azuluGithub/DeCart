@@ -9,15 +9,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgb(248, 201, 209);
+  background-color: #ddd;
   border-radius: 0.5rem;
   margin-block: 0.625rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1) inset;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: crimson;
-  background: linear-gradient(to bottom right, crimson,#fff);
+  background-color: #000;
+  background: linear-gradient(to bottom right, #000,#fff);
   border-radius: 0.5rem;
   border: 2px solid rgba(0,0,0,0.1);
 }
@@ -25,4 +25,22 @@
 .link {
   text-decoration: none;
   color: inherit;
+}
+
+
+.success-message, 
+.failure-message {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.success-message {
+    background-color: rgb(14, 104, 51);
+}
+
+.failure-message {
+    background-color: rgb(235, 85, 85);
 }

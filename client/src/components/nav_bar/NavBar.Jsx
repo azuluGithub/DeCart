@@ -7,6 +7,9 @@ import "./NavBar.css";
 
 /* #Is positioned at top bottom of the page */
 
+//grab apiKey from local storage
+const apiKey = window.sessionStorage.getItem('apiKey');
+
 const NavBar = () => {
     return (
         <div className='nav-bar'>
@@ -22,23 +25,29 @@ const NavBar = () => {
                     </div>
                 </div>
                 <div className="nav-links">
-                    <Link className="nav-item link" to="/">
-                        home
-                    </Link>
-                    <Link className="nav-cart-item link" to="/cart">
-                        <FaShoppingCart className="nav-cart-icon"/>
-                        <div className="nav-cart-badge">
-                            0
+                    {
+                        apiKey ?
+                        <>
+                            <Link className="nav-item link" to="/">
+                                home
+                            </Link>
+                            <Link className="nav-cart-item link" to="/cart">
+                                <FaShoppingCart className="nav-cart-icon"/>
+                                <div className="nav-cart-badge">
+                                    0
+                                </div>
+                            </Link>
+                        </>
+                        :
+                        <div className="nav-buttons">
+                            <Link className="nav-button nav-button-left link" to="/auth/signup">
+                                signup
+                            </Link>
+                            <Link className="nav-button nav-button-right link" to="/auth/signin">
+                                signup
+                            </Link>
                         </div>
-                    </Link>
-                    <div className="nav-buttons">
-                        <Link className="nav-button nav-button-left link" to="/signin">
-                            signup
-                        </Link>
-                        <Link className="nav-button nav-button-right link" to="/signup">
-                            signup
-                        </Link>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

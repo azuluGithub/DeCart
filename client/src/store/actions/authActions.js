@@ -6,7 +6,9 @@ import {
     SIGNUP_ISLOADING,
     SIGNUP_SUCCESS,
     SIGNUP_FAILURE,
-    SIGNIN_ISLOADING, 
+    SIGNIN_ISLOADING,
+    CLEAR_STATE,
+    CLEAR_MESSAGES,
     SIGNIN_SUCCESS,
     SIGNIN_FAILURE
 } from '../types/authTypes';
@@ -82,3 +84,25 @@ export const signInAction = signInValues => {
         }
     }
 }
+
+/**
+ * # logout user
+ */
+export const logOut = apiKey => {
+    return async dispatch => {
+        try {
+            const config = {
+                headers: { 'Authorization': `Bearer ${apiKey}` }
+            }
+
+            await axios.put(`${port}/auth/logout`, config);
+            dispatch({ type: CLEAR_STATE });
+        }
+        catch(e) {}
+    }
+}
+
+/**
+ * # clear state messages
+ */
+export const clearMessagesAction = () => dispatch => dispatch({ type: CLEAR_MESSAGES });
