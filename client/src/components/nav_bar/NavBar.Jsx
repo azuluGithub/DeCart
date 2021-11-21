@@ -28,7 +28,7 @@ const NavBar = () => {
                     <Link className="nav-cart-item link" to="/cart">
                         <FaShoppingCart className="nav-cart-icon"/>
                         <div className="nav-cart-badge">
-                            2
+                            0
                         </div>
                     </Link>
                     <div className="nav-buttons">
