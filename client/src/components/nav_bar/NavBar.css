@@ -4,7 +4,6 @@
     z-index: 5;
     width: 100vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff;;
 }
 
 .nav-bar-container {
@@ -34,13 +33,13 @@
 
 .nav-logo-left-icon {
     font-size: 30px;
-    color: #333;
+    color: crimson;
 }
 
 .nav-logo-right {
     font-weight: 600;
     font-size: 1.2rem;
-    color: #000;
+    color: #fff;
 }
 
 .nav-links {
@@ -58,7 +57,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #333;
+    color: #fff;
     position: relative;
     transition: all 1s;
 }
@@ -70,7 +69,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: #fff;
     z-index: -1;
     transition: all 1s;
 }
@@ -88,7 +87,7 @@
 }
 
 .nav-cart-icon {
-    color: #333;
+    color: #fff;
 }
 
 .nav-cart-badge {
@@ -108,11 +107,6 @@
 
 .nav-item:hover::before {
     width: 100%;
-}
-
-.nav-item:hover {
-    width: 100%;
-    color: #fff;
 }
 
 .nav-buttons {

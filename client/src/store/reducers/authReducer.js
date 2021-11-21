@@ -5,6 +5,8 @@ import {
     SIGNUP_FAILURE,
     SIGNIN_ISLOADING, 
     SIGNIN_SUCCESS,
+    CLEAR_STATE,
+    CLEAR_MESSAGES,
     SIGNIN_FAILURE
 } from '../types/authTypes';
 
@@ -48,6 +50,19 @@ export const authReducer = (state=initAuthState, action) => {
                 ...state,
                 message: action.payload.message,
                 isLoading: action.payload.isLoading
+            }
+        //clear state when user logs out
+        case CLEAR_STATE:
+            return {
+                isLoading: false,
+                message: ''
+            }
+        //clear all messages when component loads
+        case CLEAR_MESSAGES:
+            return {
+                ...state,
+                isLoading: false,
+                message: ''
             }
         default:
             return state;
