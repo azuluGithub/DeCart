@@ -1,12 +1,21 @@
+//npm packages
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
 
+//local imports
+import App from './App';
+import { store } from './store/store';
+
+/*
+  # this file is called by  public/index.html
+  # make redux global state available to all component in the app
+*/
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={store}>
+      <App />
+    </Provider>,
   document.getElementById('root')
 );
 
