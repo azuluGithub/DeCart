@@ -4,6 +4,16 @@
 # Is a Shopping Cart projects.
 ```
 
+<h1>NB: Data is not stored in file or database so to successfully log in use  :warning:</h1>
+```diff
+# email: 'test@gmail.com'
+# password: 'TestAtGmailDotCom'
+```
+
+```diff
+# registration system doesnt store data
+```
+
 <hr />
 
 <h2> De Cart Project Description: </h2>
