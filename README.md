@@ -50,22 +50,6 @@
 
 
 
-<h4> Other Users </h4>
-
-![user image](/front_end/screenshots/user_mob.JPG)
-
-<hr />
-
-
-
-
-
-
-
-
-
-
-
 <h2> Features :movie_camera: :camera: :floppy_disk: :video_camera:</h2>  
 
 ```diff
