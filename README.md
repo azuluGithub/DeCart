@@ -50,3 +50,160 @@
 # Express JS
 ```
 
+<h3> Back-End: </h3>
+
+```diff
+ # No Back End is used. Data is stored on arrays
+```
+
+
+<h2>Front-End NPM Packages :package::package::package:</h2>
+<em>for package versions: npm install package_name</em>
+
+ <ul>
+ 
+   <li>
+      <em>
+        <strong>
+          react-redux:
+        </strong>
+       </em>
+    </li>
+
+```diff
+# connecting redux to react app
+```
+
+   <li>
+      <em>
+        <strong>
+          react-router-dom:
+        </strong>
+       </em>
+    </li>
+    
+```diff
+# front-end routing e.g "/dashboad"
+```
+
+   <li>
+      <em>
+        <strong>
+          redux:
+        </strong>
+       </em>
+    </li>
+    
+```diff
+# global state of an application
+```
+
+  </ul>
+  
+<hr />
+
+<h2>Back-End NPM Packages :package:</h2> 
+
+   <li>
+      <em>
+        <strong>
+          cors:
+        </strong>
+       </em>
+    </li>
+    
+```diff
+# Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served.
+```
+  <li>
+      <em>
+        <strong>
+          dotenv:
+        </strong>
+       </em>
+    </li>
+    
+```diff
+# used with .gitignore to hide configurations and api keys from being shared on github
+```
+
+  <li>
+      <em>
+        <strong>
+          express:
+        </strong>
+       </em>
+    </li>
+    
+```diff
+# for creating a server and back-end routing
+```
+
+  <li>
+      <em>
+        <strong>
+          nodemon:
+        </strong>
+       </em>
+    </li>
+    
+```diff
+# listens to file changes and restarts server during development if they are any changes made to the file
+```
+
+<li>
+      <em>
+        <strong>
+          randomstring:
+        </strong>
+       </em>
+    </li>
+    
+```diff
+# works as string shuffle mechanism e.g to generate ids
+```
+
+  </ul>
+
+<hr />
+
+
+
+<h2> Project Structure </h2>
+
+<h3> Front-End: </h3>
+
+```diff
+# React: UI
+```
+- pages
+  - dashboard
+  - cart
+  - signin
+  - signup
+- components
+   - nav
+   - cards
+   - custom-modal
+- store
+  - action
+  - reducerss
+  - types
+- index
+- app
+
+
+<h3> Back-End: </h3>
+
+ - db
+ - controllers
+ - config
+ - middleware
+ - routes
+ - app
+ - index
+
+```diff
++ only app, index, routes and middleware are used in this project
+```
+
