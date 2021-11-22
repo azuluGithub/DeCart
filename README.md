@@ -72,7 +72,7 @@
 <h2> Stack || Languages :speech_balloon: :thought_balloon:</h2> 
 
 ```diff
-- Main focus is the Node and Express Server but React is implement to test the app
+- Main focus is the Node and Express Server but React is implemented to test the app
 ```
 
 <h3> Front-End: </h3>
