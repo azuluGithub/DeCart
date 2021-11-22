@@ -24,7 +24,7 @@
  + An API key system is used to generate API keys and these keys are used to perform cart system actions such as: Create cart, Get Cart, Update Cart and Delete Cart [CRUD operations]
  + The key is verified and validated on every request
  + A simple Full-Stack [MERN] is implemented
- +  => Mongodb is used as data storage
+ +  => Mongodb was not used due to authentication issues
  +  => Express and Node as a server for API, API authentication and verification
  +  => React Front-End is used for client authentication, Creating, Reading, Updating and Deleting cart
 ```
@@ -64,7 +64,7 @@
 <h2> Features :movie_camera: :camera: :floppy_disk: :video_camera:</h2>  
 
 ```diff
-- API Key authentication
+- API Key authentication when getting data
 - Cart
 ```
 <hr />
