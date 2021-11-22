@@ -247,6 +247,67 @@
 <hr />
 
 
+<h3> Starting Project: </h3>
+
+<h4> Navigate to root of the 'client' folder: </h4>
+
+<ul>
+   <li>
+      <em>
+        Create a 
+        <strong>
+          .env 
+        </strong>
+        file at root of the directory:
+       </em>
+    </li>
+
+<h4> Save this file as .env :arrow_down_small::arrow_down_small::arrow_down_small: </h4>
+    
+```diff
+# REACT_APP_BASE_URL=http://localhost:5000'
+```
+
+<h4> Now Navigate to root of the 'server' folder: </h4>
+
+<ul>
+   <li>
+      <em>
+        Create a 
+        <strong>
+          .env 
+        </strong>
+        file at root of the directory:
+       </em>
+    </li>
+
+<h4> Save this file as .env :arrow_down_small::arrow_down_small::arrow_down_small: </h4>
+    
+```diff
+# JWT_SECRET = 'type whatever you want here'
+```
+<ul>
+   <li>
+      <em>
+        AT THE ROOT OF BOTH CLIENT THE AND SERVER YOU CAN START THE PROJECT BY RUNNING THESE COMMANDS:
+       </em>
+    </li>
+    
+```diff
+# client:
+# npm start
+```
+ 
+ ```diff
+# server:
+# npm run dev
+```
+</ul>
+
+<h4> :grinning: :grinning: :grinning: :grinning: :grinning: HAPPY HACKING!!!!!!!! :grinning: :grinning: :grinning: :grinning: :grinning: </h4>
+
+<hr />
+<hr />
 
 
 
