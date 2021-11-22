@@ -23,6 +23,7 @@ import {
     itemsInCart: 0,
     cartTotalPrice: 0,
     add_to_cart_message: '',
+    add_to_cart_success_msg: '',
     add_to_cart_isLoading: true,
     get_cart_message: '',
     get_cart_isLoading: true,
@@ -46,7 +47,8 @@ export const cartReducer = (state=initCartState, action) => {
             return {
                 ...state,
                 cart: action.payload.cart,
-                cart_isLoading: action.payload.isLoading
+                itemsInCart: action.payload.cart.length,
+                get_cart_isLoading: action.payload.isLoading
             }
         case GET_CART_FAILURE:
             return {
@@ -60,8 +62,14 @@ export const cartReducer = (state=initCartState, action) => {
                 ...state,
                 delete_cart_isLoading: action.payload
             }
-        case DELETE_CART_FAILURE:
         case DELETE_CART_SUCCESS:
+            return {
+                ...state,
+                cart: action.payload.cart,
+                itemsInCart: action.payload.cart.length,
+                delete_cart_isLoading: action.payload.isLoading
+            }
+        case DELETE_CART_FAILURE:
             return {
                 ...state,
                 delete_cart_message: action.payload.message,
@@ -76,9 +84,9 @@ export const cartReducer = (state=initCartState, action) => {
         case ADD_TO_CART_SUCCESS:
             return {
                 ...state,
-                cart: [ ...state.cart, action.payload.product], //check later
-                cartTotalPrice: state.cartTotalPrice + (action.payload.product.price) * (action.payload.product.quantity),
-                itemsInCart: state.itemsInCart + 1, //check later
+                cart: action.payload.cart, 
+                itemsInCart: action.payload.cart.length,
+                add_to_cart_success_msg: action.payload.message,
                 add_to_cart_isLoading: action.payload.isLoading
             }
         case ADD_TO_CART_FAILURE:

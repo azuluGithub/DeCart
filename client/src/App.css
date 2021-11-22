@@ -4,6 +4,9 @@
 }
 
 
+/**
+ * #APP SCROLLBAR
+ */
 ::-webkit-scrollbar {
   width: 1rem;
 }
@@ -22,6 +25,10 @@
   border: 2px solid rgba(0,0,0,0.1);
 }
 
+
+/**
+ * #USED WHERE THER A LINKS
+ */
 .link {
   text-decoration: none;
   color: inherit;
@@ -37,10 +44,30 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+/**
+ * #SUCCESS MESSAGES ESP. ON MODALS
+ */
 .success-message {
     background-color: rgb(14, 104, 51);
 }
 
 .failure-message {
     background-color: rgb(235, 85, 85);
+}
+
+
+/**
+ * #USED WHERE APP IS LOADING
+ */
+.loading-container {
+  width: 100%;
+  height: 100vh;
+  background-color:#000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(231, 228, 228, 0.863);
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

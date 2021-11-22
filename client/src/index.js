@@ -8,10 +8,10 @@ import { Provider } from 'react-redux';
 import App from './App';
 import { store } from './store/store';
 
-/*
-  # this file is called by  public/index.html
-  # make redux global state available to all component in the app
-*/
+/**
+ * #THIS APP USES REDUX AS A STATE MANAGEMENT SYSTEM
+ * #PROVIDER MAKES STATE ACCESSABLE TO ALL COMPONENTS ON THE APP
+ */
 ReactDOM.render(
     <Provider store={store}>
       <App />

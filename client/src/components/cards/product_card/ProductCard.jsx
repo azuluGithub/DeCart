@@ -1,13 +1,28 @@
-import "./ProductCard.css";
+//npm packages
+import { useDispatch } from 'react-redux';
 
-/* # Is card component 
-   # used on home/Home.jsx to display products
-*/
+//local import
+import "./ProductCard.css";
+import { addToCartAction } from '../../../store/actions/cartActions';
+
+/**
+ * #CARD ON DASHBOARD PAGE
+ */
 
 const ProductCard = ({ product }) => {
+    
+    /**
+     * #ADDING PRODUCT TO CART
+     * #SEND AND REQUEST TO SERVER
+     */
+    const dispatch = useDispatch();
+    const handleClick = () => {
+        dispatch(addToCartAction(product));
+    }
+
     return (
         <div className='product-card'>
-            <img 
+            <img
                 alt='logo img' 
                 src={ product.img }
                 className="product-card-img"
@@ -16,7 +31,7 @@ const ProductCard = ({ product }) => {
                 <h4 className="product-info-name"> { product.name }</h4>
                 <p className="product-info-description"> { product.description }</p>
                 <p className="product-info-price"> { 'R ' + product.price }</p>
-                <button className="product-info-btn">Add To Cart</button>
+                <button className="product-info-btn" onClick={handleClick}>Add To Cart</button>
             </div>
         </div>
     )

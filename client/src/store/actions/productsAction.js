@@ -18,7 +18,11 @@ const PORT = process.env.REACT_APP_BASE_URL;
  * # activates loading spinner while waiting for response
  * # uses axios to do a get request to the node server
  */
-export const getProductsAction = apiKey => {
+export const getProductsAction = () => {
+    
+    //grab apiKey from local storage
+    const apiKey = window.sessionStorage.getItem("api-key");
+    
     return async dispatch => {
         try {
             dispatch({ type: GET_PRODUCTS_ISLOADING, payload: true });

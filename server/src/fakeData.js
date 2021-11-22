@@ -1,4 +1,17 @@
-export const fakeProducts = [
+const fakeCart = [
+    {
+        _id: 'fgulnbvftyuknbvcfghjk',
+        user_id: 'sdfghjk765rdfghu7tfghutfb',
+        productId: 'dfgerthjifijdil'
+    },
+    {
+        _id: 'fgulnbvfugvbnmkuytfcfghjk',
+        user_id: 'sdfghjk765rdfghu7tfghutfb',
+        productId: 'dfgoiugbkitfghu'
+    }
+]
+
+const fakeProducts = [
     { 
         _id: 'dfgerthjifijdil',
         name: 'Superb Ring',
@@ -256,3 +269,8 @@ export const fakeProducts = [
         img: '/assets/images/products/earrings/e8.png'
     }
 ];
+
+module.exports = {
+    fakeProducts,
+    fakeCart
+}

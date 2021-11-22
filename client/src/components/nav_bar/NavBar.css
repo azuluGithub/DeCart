@@ -70,7 +70,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: crimson;
     z-index: -1;
     transition: all 1s;
 }

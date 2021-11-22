@@ -1,0 +1,11 @@
+.cart-list-wrapper {
+    background-color: #000;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 0 20px 0;
+}
+
+.cart-list-box {
+    width: 75%;
+    margin: auto;
+}
