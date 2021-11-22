@@ -27,8 +27,12 @@ const PORT = process.env.REACT_APP_BASE_URL;
  * # activates loading spinner while waiting for response
  * # uses axios to send cart data to the node server
  */
-export const addToCartAction = (apiKey, newProduct) => async (dispatch) => {
+export const addToCartAction = newProduct => async (dispatch) => {
     try {
+        
+        //grab apiKey from local storage
+        const apiKey = window.sessionStorage.getItem("api-key");
+
         dispatch({ type: ADD_TO_CART_ISLOADING, payload: true });
 
         const config = {
@@ -39,7 +43,7 @@ export const addToCartAction = (apiKey, newProduct) => async (dispatch) => {
         }
         const body = JSON.stringify(newProduct);
         const res = await axios.post(`${PORT}/cart`, body, config);
-        dispatch({ type: ADD_TO_CART_SUCCESS, payload: { product: res.data.product, isLoading: false } });
+        dispatch({ type: ADD_TO_CART_SUCCESS, payload: { cart: res.data.cart, message: "item added to cart", isLoading: false } });
     }
     catch(e) {
         if (e.response.data.message) {
@@ -56,7 +60,11 @@ export const addToCartAction = (apiKey, newProduct) => async (dispatch) => {
  * # activates loading spinner while waiting for response
  * # uses axios to do a get request to the node server
  */
-export const getCartAction = apiKey => {
+export const getCartAction = () => {
+    
+    //grab apiKey from local storage
+    const apiKey = window.sessionStorage.getItem("api-key");
+    
     return async dispatch => {
         try {
             dispatch({ type: GET_CART_ISLOADING, payload: true });
@@ -86,19 +94,25 @@ export const getCartAction = apiKey => {
  * # activates loading spinner while waiting for response
  * # uses axios to do a Delete request to the node server
  */
-export const deleteCartAction = (cart_id, apiKey ) => {
+export const deleteCartAction = ( cart_id, cart ) => {
+    //grab apiKey from local storage
+    const apiKey = window.sessionStorage.getItem("api-key");
+    
     return async dispatch => {
         try {
             dispatch({ type: DELETE_CART_ISLOADING, payload: true });
 
             const config = {
                 headers: {
-                    'Authorization': `Bearer ${apiKey}`
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
                 }
             }
+            /**NB: DELETE CHANGED TO POST INTENTIONALY */
+            const body = JSON.stringify(cart);
 
-            const res = await axios.delete(`${PORT}/cart/${cart_id}`, config);
-            dispatch({ type: DELETE_CART_SUCCESS, payload: {  message: res.data.message, isLoading: false } });
+            const res = await axios.post(`${PORT}/cart/${cart_id}`, body, config);
+            dispatch({ type: DELETE_CART_SUCCESS, payload: {  cart: res.data.cart, isLoading: false } });
         }
         catch(e) {
             if (e.response.data.message) {

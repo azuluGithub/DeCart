@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 //local
 import './CustomModal.css';
 
+/**
+ * MODAL USED FOR SUCCESS AND ERROR MESSAGES
+ */
 const CustomModal = ({ children }) => {
     return (
         <motion.div className="custom-modal"

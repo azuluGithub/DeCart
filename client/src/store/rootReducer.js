@@ -6,8 +6,9 @@ import { cartReducer } from './reducers/cartReducer';
 import { authReducer } from './reducers/authReducer';
 import { productsReducer } from './reducers/productsReducer';
 
+
 /**
- * #puts all reducers into one reducer
+ * #COMBINING ALL REDUCERS INTO A SINGLE REDUCER
  */
 export const rootReducer = combineReducers({
     cart: cartReducer,

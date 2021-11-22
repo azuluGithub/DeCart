@@ -11,7 +11,8 @@ import {
 } from '../types/authTypes';
 
 /**
- * #initialize auth state
+ * #STORES MESSAGES FROM SERVER
+ * #AND UPDATE LOADING DURING REQUESTS
  */
 const initAuthState = {
     isLoading: false,

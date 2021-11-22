@@ -5,8 +5,9 @@ import thunk from "redux-thunk";
 //local imports
 import { rootReducer } from './rootReducer';
 
+
 /**
- * # creates redux store and passes to the app Provider so that it can be passed to the whole application
- * # thunk is responsible for async action e.g API call to the node server
+ * #THUNK IS USED AS A MIDDLEWARE FOR ASYNC ACTIONS
+ * #CREATE STORE: CREATES GLOBAL STATE
  */
 export const store = createStore(rootReducer, applyMiddleware(thunk));

@@ -7,19 +7,15 @@ import {
     SIGNUP_SUCCESS,
     SIGNUP_FAILURE,
     SIGNIN_ISLOADING,
-    CLEAR_STATE,
     CLEAR_MESSAGES,
     SIGNIN_SUCCESS,
     SIGNIN_FAILURE
 } from '../types/authTypes';
 
-//the server url stored in .env
+/**
+ * SERVER PORT STORED AS ENV VARIBLE
+ */
 const port = process.env.REACT_APP_BASE_URL;
-
-//store api key on the browser for user to log in
-const saveApiKeyInSession = apiKey => {
-    window.sessionStorage.setItem("api-key", apiKey);
-}
 
 /**
  * # creates a new user
@@ -52,6 +48,14 @@ export const signUpAction = signUpValues => {
 }
 
 /**
+ * #API-KEY OBTAINED DURING LOG IN IS SAVE ON BROWSER
+ */
+const saveApiKeyInSession = apiKey => {
+    window.sessionStorage.setItem("api-key", apiKey);
+}
+
+
+/**
  * # logs in registered user
  * # if log in was successful: - save API Key to the browser
  * # if log in failed:- dispatch error message to the reducer
@@ -71,7 +75,7 @@ export const signInAction = signInValues => {
             const body = JSON.stringify(signInValues);
             const res = await axios.post(`${port}/auth/signin`, body, config);
         
-            saveApiKeyInSession(res.data.token);
+            saveApiKeyInSession(res.data.apiKey);
 
             dispatch({ type: SIGNIN_SUCCESS, payload: { isLoading: false } });
         }
@@ -85,25 +89,9 @@ export const signInAction = signInValues => {
     }
 }
 
-/**
- * # logout user
- */
-export const logOut = apiKey => {
-    return async dispatch => {
-        try {
-            const config = {
-                headers: { 'Authorization': `Bearer ${apiKey}` }
-            }
-
-            await axios.put(`${port}/auth/logout`, config);
-            dispatch({ type: CLEAR_STATE });
-        }
-        catch(e) {}
-    }
-}
 
 /**
- * # clear state messages
+ * CLEAR SUCCESS AND ERROR MESSAGES
  */
 export const clearMessagesAction = () => dispatch => dispatch({ type: CLEAR_MESSAGES });
 

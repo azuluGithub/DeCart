@@ -1,53 +1,61 @@
 //npm packages
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //local imports
 import './SignUp.css';
+import NavBar from '../../../components/nav_bar/NavBar';
 import CustomModal from '../../../components/custom_modal/CustomModal';
 import { signUpAction, clearMessagesAction } from '../../../store/actions/authActions';
 
-/*
-   # is a 'create user / registration page'
-*/
+/**
+ * #REGISTER NEW USER
+ */
 const SignUp = () => {
     
-    //initialize state of input fields
+    /**
+     * #FORM VALUES
+     */
     const [ userName, setUserName ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ cpassword, setCPassword ] = useState('');
 
-    //submit signup inputs to firebase auth then add user to mongodb
+    /**
+     * #SEND FORM TO THE BACK-END
+     * #STORE RESPONSE ON REDUX STATE
+     */
     const dispatch = useDispatch();
     const handleSubmit = () => dispatch(signUpAction({ userName, email, password, cpassword }));
     
-    //get data from redux state
+    /**
+     * #FETCH SERVER RESPONSES FROM REDUX STATE
+     */
     const message = useSelector((state) => state.auth.message);
     const isLoading = useSelector((state) => state.auth.isLoading)
 
-    /**NB: u can use toastify package */
-    //error messages in red, success messages in green
+    /**
+     * #USE GREEN FOR SUCCESS MESSAGES
+     * #AND RED FOR ERROR MESSAGES
+     */
     const messageClass = (message, str) => message.includes(str) ? 'success-message' : 'failure-message';
 
-    //disable button when loading
+    /**
+     * #DISABLE THE BUTTON WHEN LOADING
+     */
     const isButtonDisabled = loading => loading ? 'sign-up-button-disabled' : 'sign-up-button';
     
-    //clear error messages from global state after 4 sec
+    /**
+     * #CLEAR SUCCESS OR ERROR MESSAGES AFTER 4s
+     */
     setTimeout(() => {
         message.length > 0 && dispatch(clearMessagesAction());
     }, 4000);
 
-    //grab apiKey from local storage
-    const apiKey = window.sessionStorage.getItem('apiKey');
-
-    //if user is logged in route to dashboard
-    if (apiKey) {
-        return <Redirect to="/"/>;
-    }
-
     return (
+        <>
+        <NavBar />
         <div className='sign-up'>
             <img className='sign-up-bg-image' src='/assets/images/bg/cartBg.jpg' alt='background img' />
             <div className='sign-up-wrapper'>
@@ -119,6 +127,7 @@ const SignUp = () => {
                     : ''
             }
         </div>
+        </>
     )
 }
 
