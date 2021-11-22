@@ -18,3 +18,35 @@
  +  => React Front-End is used for client authentication, Creating, Reading, Updating and Deleting cart
 ```
 :cherries: :fish: :iphone:
+
+<h2> Features :movie_camera: :camera: :floppy_disk: :video_camera:</h2>  
+
+```diff
+- API Key authentication
+- Cart
+```
+<hr />
+
+<h2> Stack || Languages :speech_balloon: :thought_balloon:</h2> 
+
+```diff
+- Main focus is the Node and Express Server but React is implement to test the app
+```
+
+<h3> Front-End: </h3>
+
+```diff
+# JavaScript (ES6+)
+# React JS
+# Redux
+# HTML
+# CSS
+```
+
+<h3> Server: </h3>
+
+```diff
+# Node JS
+# Express JS
+```
+
