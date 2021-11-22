@@ -1,7 +1,7 @@
 <h1>:shopping_cart: de-Cart :shopping_cart:</h1>
 
 ```diff
-# Is a Shopping Cart projects.
+# Is a Shopping Cart project.
 ```
 :warning: :warning:                                                                
 <h1>NB: Data is not stored in file or database so to successfully log in use  </h1>
