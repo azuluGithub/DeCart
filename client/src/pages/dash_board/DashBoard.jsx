@@ -1,3 +1,4 @@
+import Products from "../products/Products";
 import "./DashBoard.css";
 
 /* 
@@ -7,7 +8,7 @@ import "./DashBoard.css";
 const DashBoard = () => {
     return (
         <div>
-            DashBoard
+            <Products />
         </div>
     )
 }

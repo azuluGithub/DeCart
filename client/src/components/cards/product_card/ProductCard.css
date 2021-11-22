@@ -1,0 +1,82 @@
+.product-card {
+    width: 100%;
+    height: 300px;
+    background-color: pink;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 8px rgb(128, 127, 127);
+    overflow: hidden;
+}
+
+.product-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background-color: #0099ff;
+    line-height: 1rem;
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: scale(2);
+    opacity: 0;
+}
+
+.product-card:hover .product-info {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.product-info-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    margin: 2.4rem 0 1rem 0;
+    font-family: cursive;
+}
+
+.product-info-description {
+    font-size: 15px;
+    line-height: 1.05rem;
+}
+
+.product-info-price {
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 1rem 0 2rem 0;
+}
+
+.product-info-btn {
+    background-color: #111;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0.5rem 1.2rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 0.6rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+
+.product-info-btn:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    padding: 0.6rem 1.3rem;
+    font-size: 0.7rem;
+}
